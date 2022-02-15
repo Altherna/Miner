@@ -11,7 +11,7 @@ do
 		echo "| |  | | | | | | | | | | (_| | |  __/ (_) | (_) | |"
 		echo "|_|  |_|_|_| |_|_|_| |_|\__, | |_|   \___/ \___/|_|"
 		echo "                         |___/"
-		echo "            \033[1;32m  XMRIG Installer\n\n"
+		echo "            \033[1;32m  ccminer VERUS Installer\n\n"
 		echo "\033[1;32m"
 		echo -n "Do Tou Want To Continue (Y/N) : "
   read select;
@@ -20,12 +20,13 @@ do
       echo "Installing Starting....!"
       apt-get update && apt-get upgrade -y
       apt-get install git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev -y
-      git clone https://github.com/xmrig/xmrig.git
-      cd xmrig
-      mkdir build
-      cd build
-      cmake ..
-      make
+      apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
+      git clone --branch ARM https://github.com/Altherna/ccminer.git
+      cd ccminer
+      chmod +x autogen.sh
+      chmod +x build.sh
+      chmod +x configure.sh
+      ./build.sh -j5
       echo "Installing Successful"
       exit
   elif [ $select = "n" ]||[ $select = "N" ]
