@@ -1,0 +1,2 @@
+# Miner
+easy installation 
