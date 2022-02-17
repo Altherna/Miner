@@ -21,7 +21,7 @@ do
       apt-get update && apt-get upgrade -y
       apt-get install git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev -y
       apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
-      git clone --branch ARM https://github.com/Altherna/ccminer.git
+      git clone --branch ARM https://github.com/Altherna/verus.git
       cd ccminer
       chmod +x autogen.sh
       chmod +x build.sh
