@@ -18,14 +18,14 @@ do
   if [ $select = "y" ]||[ $select = "Y" ]
   then
       echo "Installing Starting....!"
-      apt-get update && apt-get upgrade -y
-      apt-get install git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev -y
-      apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
+      apt update && apt upgrade -y
+      apt install git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev -y
+      apt install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
       pkg install automake build-essential curl git gnupg openssl nano
       pkg install clang
-      pkg install gcc-8
+      pkg install gcc-10
       curl -s https://its-pointless.github.io/setup-pointless-repo.sh | bash
-      setupgcc-8
+      setupgcc-10
       setup-patchforgcc
       git clone --single-branch -b ARM https://github.com/altherna/ccminer.git
       cd ccminer
