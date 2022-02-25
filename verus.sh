@@ -21,11 +21,15 @@ do
       apt-get update && apt-get upgrade -y
       apt-get install git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev -y
       apt-get install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
-      git clone --branch ARM https://github.com/Altherna/verus.git
-      cd verus
-      chmod +x autogen.sh
-      chmod +x build.sh
-      chmod +x configure.sh
+      pkg install automake build-essential curl git gnupg openssl nano
+      pkg install clang
+      pkg install gcc-8
+      curl -s https://its-pointless.github.io/setup-pointless-repo.sh | bash
+      setupgcc-8
+      setup-patchforgcc
+      git clone --single-branch -b ARM https://github.com/altherna/ccminer.git
+      cd ccminer
+      libtoolize
       ./build.sh -j5
       echo "Installing Successful"
       exit
