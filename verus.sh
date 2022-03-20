@@ -21,7 +21,7 @@ do
       apt update && apt upgrade -y
       apt install git build-essential cmake libuv1-dev libmicrohttpd-dev libssl-dev -y
       apt install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential
-      git clone --single-branch -b ARM https://github.com/altherna/ccminer.git
+      //git clone --single-branch -b ARM https://github.com/altherna/ccminer.git
       cd ccminer
       libtoolize
       ./build.sh -j5
